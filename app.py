@@ -1,6 +1,5 @@
-
+from flask import Flask
 import mysql.connector
-
 def conectar():
 
   connection = mysql.connector.connect(
@@ -9,9 +8,7 @@ def conectar():
     password="011292",
     database="bd_escola"
   )
-
   return connection
-
 def criar_aluno(nome, idade, nota_primeiro_semestre, nota_segundo_semestre, nome_professor, numero_sala):
 
   connection = conectar()
@@ -23,6 +20,5 @@ def criar_aluno(nome, idade, nota_primeiro_semestre, nota_segundo_semestre, nome
   cursor.execute(sql, val)
 
   connection.commit()
-
   return cursor.lastrowid
 
