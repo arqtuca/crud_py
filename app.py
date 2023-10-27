@@ -1,5 +1,10 @@
-
+from fastapi import FastAPI
+import uvicorn
 import mysql.connector
+
+app = FastAPI()
+
+@app.get('/conectar')
 def conectar():
 
   connection = mysql.connector.connect(
@@ -9,6 +14,8 @@ def conectar():
     database="bd_escola"
   )
   return connection
+
+@app.post('/criar_aluno')
 def criar_aluno(nome, idade, nota_primeiro_semestre, nota_segundo_semestre, nome_professor, numero_sala):
 
   connection = conectar()
