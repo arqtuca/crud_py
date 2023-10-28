@@ -4,7 +4,7 @@ asgiref==3.7.2
 blinker==1.6.3
 click==8.1.7
 colorama==0.4.6
-Django==4.2.6
+Django==3.2.22
 EasyProcess==1.1
 entrypoint2==1.1
 et-xmlfile==1.1.0
