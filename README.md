@@ -1,6 +1,6 @@
 # Aplicação CRUD - Projeto de Exemplo para Desenvolvedor/a Web/Cloud - AWS Practitioner - Potência Tech - São Paulo
 
-![Imagem de Capa]([url_da_imagem_de_capa](https://github.com/arqtuca/crud_py/blob/main/01.jpeg))
+![Imagem de Capa](https://github.com/arqtuca/crud_py/blob/main/01.jpeg)
 
 ## Índice
 - [Descrição do Projeto](#descricao-do-projeto)
