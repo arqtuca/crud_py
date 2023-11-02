@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import mysql.connector
 from pydantic import BaseModel
+import psycopg2
 
 class Aluno(BaseModel):
   nome: str
