@@ -1,61 +1,148 @@
-swagger: '2.0'
+openapi: 3.0.0
 info:
-  title: Meu CRUD Python to MySQL
-  description: API para realizar operações CRUD em um banco de dados MySQL
+  title: API de Escola
+  description: API para gerenciamento de alunos
   version: 1.0.0
 
 paths:
-  /alunos:
+  /conectar:
     get:
-      tags:
-        - Alunos
-      summary: Retorna uma lista de alunos
+      summary: Conecta ao banco de dados
       responses:
         200:
-          description: Lista de alunos
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Aluno'
-
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  connection:
+                    type: object
+                    properties:
+                      host:
+                        type: string
+                      port:
+                        type: integer
+                      database:
+                        type: string
+                      user:
+                        type: string
+                      password:
+                        type: string
+  /criar_aluno:
     post:
-      tags:
-        - Alunos
       summary: Cria um novo aluno
-      parameters:
-        - name: aluno
-          in: body
-          description: Aluno a ser criado
-          schema:
-            $ref: '#/definitions/Aluno'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aluno'
       responses:
         201:
-          description: Aluno criado
+          description: Criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aluno'
+  /alunos:
+    get:
+      summary: Lista todos os alunos
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aluno'
+  /alunos/nome/<nome>:
+    get:
+      summary: Lista os alunos pelo nome
+      parameters:
+        - name: nome
+          in: path
+          required: true
           schema:
-            $ref: '#/definitions/Aluno'
+            type: string
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aluno'
+  /alunos/nota/<nota>:
+    get:
+      summary: Lista os alunos pela nota
+      parameters:
+        - name: nota
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aluno'
+  /atualizar_aluno/<id>:
+    post:
+      summary: Atualiza um aluno
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aluno'
+      responses:
+        200:
+          description: Atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aluno'
+  /deletar_aluno/<id>:
+    delete:
+      summary: Deleta um aluno
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Deletado com sucesso
+          content:
+            application/json:
+              schema:
+                type: integer
 
-definitions:
-  Aluno:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: ID do aluno
-      nome:
-        type: string
-        description: Nome do aluno
-      idade:
-        type: integer
-        description: Idade do aluno
-      nota_primeiro_semestre:
-        type: number
-        description: Nota do primeiro semestre
-      nota_segundo_semestre:
-        type: number
-        description: Nota do segundo semestre
-      nome_professor:
-        type: string
-        description: Nome do professor
-      numero_sala:
-        type: integer
-        description: Número da sala
+components:
+  schemas:
+    Aluno:
+      type: object
+      properties:
+        nome:
+          type: string
+        idade:
+          type: integer
+        nota_primeiro_semestre:
+          type: number
+        nota_segundo_semestre:
+          type: number
+        nome_
