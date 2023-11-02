@@ -2,13 +2,6 @@
 
 ![Imagem de Capa](https://github.com/arqtuca/crud_py/blob/main/01.jpeg)
 
-## Índice
-- [Descrição do Projeto](#descricao-do-projeto)
-- [Status do Projeto](#status-do-projeto)
-- [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstracao-da-aplicacao)
-- [Acesso ao Projeto](#acesso-ao-projeto)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-
 ## Descrição do Projeto
 
 Este é um projeto de exemplo que inclui uma aplicação CRUD desenvolvida em Python com o framework FastAPI. A aplicação é destinada a realizar operações de Create, Read, Update e Delete (CRUD) em um banco de dados MySQL. O objetivo principal deste projeto é demonstrar como criar uma aplicação CRUD simples e como implantá-la em uma plataforma de hospedagem, no caso, o Render.
