@@ -19,10 +19,11 @@ def home():
 @app.get('/conectar')
 def conectar():
 
-  connection = mysql.connector.connect(
-    host="localhost",
+  connection = psycopg2.connect(
+    host="dpg-ckushv3amefc73cek860-a.oregon-postgres.render.com",
+    port=5432,
     user="root",
-    password="011292",
+    password="tOqBSmsaLEie6ZSM2GPcewVCZ1DScvL7",
     database="bd_escola"
   )
   return connection
