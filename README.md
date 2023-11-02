@@ -15,7 +15,7 @@ Este é um projeto de exemplo que inclui uma aplicação CRUD desenvolvida em Py
 
 ## Status do Projeto
 
-Atualmente, o projeto foi implantado no Render, mas está enfrentando problemas de conexão com o servidor de banco de dados. Como resultado, as funcionalidades do CRUD não estão funcionando conforme o esperado.
+Atualmente, o projeto foi implantado no Render, mas está enfrentando problemas de conexão com o servidor de banco de dados. As funcionalidades do CRUD estão funcionando apenas em localhost.
 
 ## Funcionalidades e Demonstração da Aplicação
 
