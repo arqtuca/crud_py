@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 import mysql.connector
 from pydantic import BaseModel
-import psycopg2
 
 class Aluno(BaseModel):
   nome: str
@@ -20,11 +19,10 @@ def home():
 @app.get('/conectar')
 def conectar():
 
-  connection = psycopg2.connect(
-    host="dpg-ckushv3amefc73cek860-a.oregon-postgres.render.com",
-    port=5432,
+  connection = mysql.connector.connect(
+    host="localhost",
     user="root",
-    password="tOqBSmsaLEie6ZSM2GPcewVCZ1DScvL7",
+    password="011292",
     database="bd_escola"
   )
   return connection
